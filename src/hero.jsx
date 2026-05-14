@@ -6,7 +6,7 @@ function Hero() {
     <section className="relative min-h-screen overflow-hidden bg-black text-white">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1800&q=80"
+          src="https://images.unsplash.com/photo-1767346828077-e44a29d67242?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fExhZ29zJTIwTXVzaWMlMjBGZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D"
           alt="A packed concert audience with stage lights"
           className="h-full w-full object-cover opacity-35"
         />
@@ -35,11 +35,17 @@ function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Link to="/events" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-bold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white/90">
+            <Link
+              to="/events"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-bold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+            >
               Explore Events
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link to="/ticket" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/15">
+            <Link
+              to="/ticket"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/15"
+            >
               <Ticket className="h-5 w-5" />
               Buy Tickets
             </Link>
@@ -115,7 +121,10 @@ function Hero() {
                 <p className="text-sm text-white/55">From</p>
                 <p className="mt-2 font-bold">NGN 15,000</p>
               </div>
-              <Link to="/ticket" className="rounded-2xl bg-white px-5 py-4 font-black text-black transition duration-300 hover:bg-pink-100 sm:px-6">
+              <Link
+                to="/ticket"
+                className="rounded-2xl bg-white px-5 py-4 font-black text-black transition duration-300 hover:bg-pink-100 sm:px-6"
+              >
                 Buy
               </Link>
             </div>
