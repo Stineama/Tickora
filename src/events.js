@@ -6,7 +6,7 @@ const events = [
     location: "Lagos, Nigeria",
     date: "June 24, 2026",
     image:
-      "https://images.unsplash.com/photo-1615841192203-84f7b2899c0b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fExhZ29zJTIwTXVzaWMlMjBGZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1594122107402-e0a8ede4655d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fExhZ29zJTIwbmlnaHQlMjBNdXNpYyUyMEZlc3RpdmFsfGVufDB8fDB8fHww",
     description:
       "Experience Lagos nightlife with headline artists, DJs, and a packed festival crowd.",
     regularPrice: 5000,
