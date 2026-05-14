@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import About from "../About";
 import FeaturedEvents from "../FeaturedEvents";
 import Hero from "../hero";
+import Navbar from "../navbar";
+import Footer from "../footer";
 
 function Home() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -40,6 +42,7 @@ function Home() {
       >
         <ArrowUp className="h-5 w-5" />
       </button>
+      <Footer/>
     </>
   );
 }

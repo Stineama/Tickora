@@ -22,6 +22,7 @@ function Success() {
 
   return (
     <section className="min-h-screen bg-black pb-20 pt-28 text-white">
+      <navbar/>
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-14 text-center">
           <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-green-500 bg-green-500/20">
@@ -105,7 +106,9 @@ function Success() {
           </>
         )}
       </div>
+      <footer/>
     </section>
+    
   );
 }
 

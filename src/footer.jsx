@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function InstagramIcon() {
   return (
@@ -103,15 +103,15 @@ function Footer() {
           <div>
             <h2 className="font-bold">Explore</h2>
             <div className="mt-5 flex flex-col gap-3 text-sm text-white/60">
-              <Link to="/" className="transition hover:text-pink-300">
+              <NavLink to="/" className="transition hover:text-pink-300">
                 Home
-              </Link>
-              <Link to="/events" className="transition hover:text-pink-300">
+              </NavLink>
+              <NavLink to="/events" className="transition hover:text-pink-300">
                 Events
-              </Link>
-              <Link to="/ticket" className="transition hover:text-pink-300">
+              </NavLink>
+              <NavLink to="/ticket" className="transition hover:text-pink-300">
                 Ticket
-              </Link>
+              </NavLink>
             </div>
           </div>
 

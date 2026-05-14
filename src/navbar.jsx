@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, Ticket } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "./useCart";
 
 function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
     const { cartCount } = useCart();
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const navLinkClass = ({ isActive }) =>
         `transition duration-300 hover:text-purple-400 ${
             isActive ? "text-purple-400" : "text-white"
@@ -58,7 +59,7 @@ function Navbar() {
                     <div className="hidden md:flex items-center gap-5">
 
                         <Link to="/ticket" className="relative">
-                            <ShoppingCart className="w-6 h-6 text-white transition hover:text-purple-400" />
+                            <Ticket className="w-6 h-6 text-white transition hover:text-purple-400" />
 
                             <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                                 {cartCount}
@@ -73,7 +74,7 @@ function Navbar() {
 
                     <div className="flex items-center gap-4 md:hidden">
                         <Link to="/ticket" className="relative">
-                            <ShoppingCart className="w-6 h-6 text-white transition hover:text-purple-400" />
+                            <Ticket className="w-6 h-6 text-white transition hover:text-purple-400" />
                             <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                                 {cartCount}
                             </span>

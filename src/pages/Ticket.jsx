@@ -2,6 +2,8 @@ import { ArrowUp, Minus, Plus, Trash2, AlertTriangle, X } from "lucide-react";
 import { QRCodeCanvas } from "qrcode.react";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Navbar from "../navbar";
+import Footer from "../footer";
 import { useCart } from "../useCart";
 
 function getPurchasedTickets() {
@@ -62,13 +64,13 @@ function Ticket() {
 
       // Filter out the cancelled ticket
       const updatedPurchases = purchases.filter(
-        (t) => t.id !== ticketToCancel.id
+        (t) => t.id !== ticketToCancel.id,
       );
 
       // Update sessionStorage
       sessionStorage.setItem(
         "tickora-all-purchases",
-        JSON.stringify(updatedPurchases)
+        JSON.stringify(updatedPurchases),
       );
 
       // Update state
@@ -80,13 +82,8 @@ function Ticket() {
       console.error("Error cancelling ticket:", error);
     }
   }
-  const {
-    cartItems,
-    cartTotal,
-    clearCart,
-    removeFromCart,
-    updateQuantity,
-  } = useCart();
+  const { cartItems, cartTotal, clearCart, removeFromCart, updateQuantity } =
+    useCart();
 
   function handleCheckout() {
     if (cartItems.length === 0) {
@@ -136,13 +133,21 @@ function Ticket() {
                         </span>
                       </div>
 
-                      <h2 className="mt-4 text-2xl font-bold">{ticket.eventName}</h2>
+                      <h2 className="mt-4 text-2xl font-bold">
+                        {ticket.eventName}
+                      </h2>
 
                       <div className="mt-4 space-y-2 text-sm text-white/65">
-                        <p>{ticket.location} | {ticket.date}</p>
+                        <p>
+                          {ticket.location} | {ticket.date}
+                        </p>
                         <p>Quantity: {ticket.quantity}</p>
-                        <p>Total Paid: NGN {ticket.totalPaid.toLocaleString()}</p>
-                        <p className="break-all text-xs">Ticket ID: {ticket.ticketId}</p>
+                        <p>
+                          Total Paid: NGN {ticket.totalPaid.toLocaleString()}
+                        </p>
+                        <p className="break-all text-xs">
+                          Ticket ID: {ticket.ticketId}
+                        </p>
                       </div>
                     </div>
 
@@ -274,108 +279,114 @@ function Ticket() {
               Browse Events
             </Link>
           </div>
-        ) : cartItems.length > 0 && (
-          <div className="grid gap-8 lg:grid-cols-[1fr_22rem]">
-            <div className="space-y-4">
-              {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-md sm:grid-cols-[9rem_1fr_auto]"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.eventName}
-                    className="h-36 w-full rounded-2xl object-cover sm:h-full"
-                  />
+        ) : (
+          cartItems.length > 0 && (
+            <div className="grid gap-8 lg:grid-cols-[1fr_22rem]">
+              <div className="space-y-4">
+                {cartItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-md sm:grid-cols-[9rem_1fr_auto]"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.eventName}
+                      className="h-36 w-full rounded-2xl object-cover sm:h-full"
+                    />
 
-                  <div>
-                    <p className="text-sm font-semibold text-pink-300">
-                      {item.ticketLabel} Ticket
-                    </p>
-                    <h2 className="mt-2 text-2xl font-bold">{item.eventName}</h2>
-                    <p className="mt-2 text-sm text-white/55">
-                      {item.location} | {item.date}
-                    </p>
-                    <p className="mt-3 font-semibold">
-                      NGN {item.price.toLocaleString()} each
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
-                    <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/30 p-2">
-                      <button
-                        onClick={() =>
-                          updateQuantity(item.id, item.quantity - 1)
-                        }
-                        className="rounded-xl p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
-                      >
-                        <Minus className="h-4 w-4" />
-                      </button>
-                      <span className="min-w-6 text-center font-semibold">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() =>
-                          updateQuantity(item.id, item.quantity + 1)
-                        }
-                        className="rounded-xl p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
-                      >
-                        <Plus className="h-4 w-4" />
-                      </button>
-                    </div>
-
-                    <div className="text-right">
-                      <p className="font-bold">
-                        NGN {(item.price * item.quantity).toLocaleString()}
+                    <div>
+                      <p className="text-sm font-semibold text-pink-300">
+                        {item.ticketLabel} Ticket
                       </p>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="mt-3 inline-flex items-center gap-2 text-sm text-white/50 transition hover:text-pink-300"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                        Remove
-                      </button>
+                      <h2 className="mt-2 text-2xl font-bold">
+                        {item.eventName}
+                      </h2>
+                      <p className="mt-2 text-sm text-white/55">
+                        {item.location} | {item.date}
+                      </p>
+                      <p className="mt-3 font-semibold">
+                        NGN {item.price.toLocaleString()} each
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
+                      <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/30 p-2">
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity - 1)
+                          }
+                          className="rounded-xl p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
+                        >
+                          <Minus className="h-4 w-4" />
+                        </button>
+                        <span className="min-w-6 text-center font-semibold">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity + 1)
+                          }
+                          className="rounded-xl p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+
+                      <div className="text-right">
+                        <p className="font-bold">
+                          NGN {(item.price * item.quantity).toLocaleString()}
+                        </p>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="mt-3 inline-flex items-center gap-2 text-sm text-white/50 transition hover:text-pink-300"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+
+              <aside className="h-fit rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+                <h2 className="text-2xl font-bold">Order Summary</h2>
+
+                <div className="mt-6 space-y-3 border-b border-white/10 pb-6 text-sm text-white/65">
+                  <div className="flex justify-between">
+                    <span>Tickets</span>
+                    <span>
+                      {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Subtotal</span>
+                    <span>NGN {cartTotal.toLocaleString()}</span>
+                  </div>
                 </div>
-              ))}
+
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-white/65">Total</span>
+                  <span className="text-2xl font-black">
+                    NGN {cartTotal.toLocaleString()}
+                  </span>
+                </div>
+
+                <button
+                  onClick={handleCheckout}
+                  className="mt-6 w-full rounded-2xl bg-linear-to-r from-purple-500 to-pink-500 py-4 font-semibold transition hover:scale-[1.02]"
+                >
+                  Confirm Purchase
+                </button>
+                <button
+                  onClick={clearCart}
+                  className="mt-3 w-full rounded-2xl border border-white/10 py-3 font-semibold text-white/70 transition hover:bg-white/10 hover:text-white"
+                >
+                  Clear Cart
+                </button>
+              </aside>
             </div>
-
-            <aside className="h-fit rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
-              <h2 className="text-2xl font-bold">Order Summary</h2>
-
-              <div className="mt-6 space-y-3 border-b border-white/10 pb-6 text-sm text-white/65">
-                <div className="flex justify-between">
-                  <span>Tickets</span>
-                  <span>{cartItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Subtotal</span>
-                  <span>NGN {cartTotal.toLocaleString()}</span>
-                </div>
-              </div>
-
-              <div className="mt-6 flex items-center justify-between">
-                <span className="text-white/65">Total</span>
-                <span className="text-2xl font-black">
-                  NGN {cartTotal.toLocaleString()}
-                </span>
-              </div>
-
-              <button
-                onClick={handleCheckout}
-                className="mt-6 w-full rounded-2xl bg-linear-to-r from-purple-500 to-pink-500 py-4 font-semibold transition hover:scale-[1.02]"
-              >
-                Confirm Purchase
-              </button>
-              <button
-                onClick={clearCart}
-                className="mt-3 w-full rounded-2xl border border-white/10 py-3 font-semibold text-white/70 transition hover:bg-white/10 hover:text-white"
-              >
-                Clear Cart
-              </button>
-            </aside>
-          </div>
+          )
         )}
       </div>
       <button
@@ -390,6 +401,7 @@ function Ticket() {
       >
         <ArrowUp className="h-5 w-5" />
       </button>
+      <Footer />
     </section>
   );
 }
