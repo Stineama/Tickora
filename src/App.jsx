@@ -22,6 +22,7 @@ return (
       <Route path="/events/:id" element={<EventDetails />} />
       <Route path="/success" element={<Success />} />
     </Routes>
+    
     <Footer />
 
   </div>
