@@ -1,8 +1,27 @@
-import { Minus, Plus, Trash2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUp, Minus, Plus, Trash2 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { generateTicketId } from "../generateTicketId";
+import { useEffect, useState } from "react";
 import { useCart } from "../useCart";
 
 function Ticket() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    function handleScroll() {
+      setShowBackToTop(window.scrollY > 500);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
   const {
     cartItems,
     cartTotal,
@@ -10,6 +29,13 @@ function Ticket() {
     removeFromCart,
     updateQuantity,
   } = useCart();
+
+  function handleCheckout() {
+    if (cartItems.length === 0) {
+      return;
+    }
+    navigate("/checkout");
+  }
 
   return (
     <section className="min-h-screen bg-black px-6 pb-20 pt-32 text-white lg:px-10">
@@ -125,8 +151,11 @@ function Ticket() {
                 </span>
               </div>
 
-              <button className="mt-6 w-full rounded-2xl bg-linear-to-r from-purple-500 to-pink-500 py-4 font-semibold transition hover:scale-[1.02]">
-                Checkout
+              <button
+                onClick={handleCheckout}
+                className="mt-6 w-full rounded-2xl bg-linear-to-r from-purple-500 to-pink-500 py-4 font-semibold transition hover:scale-[1.02]"
+              >
+                Confirm Purchase
               </button>
               <button
                 onClick={clearCart}
@@ -138,6 +167,18 @@ function Ticket() {
           </div>
         )}
       </div>
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className={`fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white shadow-2xl shadow-purple-500/20 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-pink-300/60 hover:text-pink-200 ${
+          showBackToTop
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </section>
   );
 }

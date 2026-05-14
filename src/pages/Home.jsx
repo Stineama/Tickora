@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import About from "../About";
 import FeaturedEvents from "../FeaturedEvents";
 import Hero from "../hero";
 
@@ -25,6 +26,7 @@ function Home() {
     <>
       <Hero />
       <FeaturedEvents />
+      <About />
 
       <button
         type="button"

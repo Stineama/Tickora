@@ -53,11 +53,6 @@ function Navbar() {
                             </NavLink>
                         </li>
 
-                         <li>
-                            <NavLink to="/about" className={navLinkClass}>
-                                About
-                            </NavLink>
-                        </li>
                     </ul>
 
                     <div className="hidden md:flex items-center gap-5">
@@ -76,10 +71,17 @@ function Navbar() {
                         </Link>
                     </div>
 
-                    <button className="md:hidden text-white"  
-                    onClick={() => setMenuOpen(!menuOpen)}>
-                        {menuOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
+                    <div className="flex items-center gap-4 md:hidden">
+                        <Link to="/ticket" className="relative">
+                            <ShoppingCart className="w-6 h-6 text-white transition hover:text-purple-400" />
+                            <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                                {cartCount}
+                            </span>
+                        </Link>
+                        <button className="text-white" onClick={() => setMenuOpen(!menuOpen)}>
+                            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
                 </div>
             </div>
 

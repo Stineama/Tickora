@@ -112,9 +112,6 @@ function Footer() {
               <Link to="/ticket" className="transition hover:text-pink-300">
                 Ticket
               </Link>
-              <Link to="/about" className="transition hover:text-pink-300">
-                About
-              </Link>
             </div>
           </div>
 

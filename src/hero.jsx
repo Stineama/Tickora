@@ -1,4 +1,5 @@
 import { ArrowRight, CalendarDays, MapPin, Search, Ticket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -34,14 +35,14 @@ function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-bold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white/90">
+            <Link to="/events" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-bold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white/90">
               Explore Events
               <ArrowRight className="h-5 w-5" />
-            </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/15">
+            </Link>
+            <Link to="/ticket" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/15">
               <Ticket className="h-5 w-5" />
-              Sell Tickets
-            </button>
+              Buy Tickets
+            </Link>
           </div>
 
           <div className="mt-10 grid max-w-2xl gap-3 rounded-3xl border border-white/15 bg-black/45 p-3 backdrop-blur-xl sm:grid-cols-[1fr_1fr_auto]">
@@ -114,9 +115,9 @@ function Hero() {
                 <p className="text-sm text-white/55">From</p>
                 <p className="mt-2 font-bold">NGN 15,000</p>
               </div>
-              <button className="rounded-2xl bg-white px-5 py-4 font-black text-black transition duration-300 hover:bg-pink-100 sm:px-6">
+              <Link to="/ticket" className="rounded-2xl bg-white px-5 py-4 font-black text-black transition duration-300 hover:bg-pink-100 sm:px-6">
                 Buy
-              </button>
+              </Link>
             </div>
 
             <div className="mx-3 mb-2 rounded-2xl border border-white/10 bg-black/35 p-4">
