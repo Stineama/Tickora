@@ -91,7 +91,7 @@ function Hero() {
           <div className="overflow-hidden rounded-4xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl">
             <div className="relative overflow-hidden rounded-3xl">
               <img
-                src="https://images.unsplash.com/photo-1767346828077-e44a29d67242?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fExhZ29zJTIwTXVzaWMlMjBGZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D"
+                src="https://images.unsplash.com/photo-1615841192203-84f7b2899c0b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fExhZ29zJTIwTXVzaWMlMjBGZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Festival crowd at night"
                 className="h-104 w-full object-cover"
               />
