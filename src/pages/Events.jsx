@@ -1,5 +1,5 @@
 import { ChevronDown, Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import EventCard from "../eventCard";
 import events from "../events";
 import Navbar from "../navbar";
@@ -11,13 +11,9 @@ function Events() {
   const [location, setLocation] = useState("All");
   const [sort, setSort] = useState("Newest");
 
-  const categories = useMemo(
-    () => ["All", ...new Set(events.map((event) => event.category))],
-    []
-  );
+  const categories = ["All", ...new Set(events.map((event) => event.category))];
 
-  const filteredEvents = useMemo(() => {
-    return events
+  const filteredEvents = events
       .filter((event) => {
         const query = search.trim().toLowerCase();
         const matchesSearch =
@@ -48,7 +44,6 @@ function Events() {
 
         return new Date(b.date) - new Date(a.date);
       });
-  }, [category, location, search, sort]);
 
   return (
     <>

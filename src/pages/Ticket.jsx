@@ -9,7 +9,7 @@ import { useCart } from "../useCart";
 function getPurchasedTickets() {
   try {
     // Get all accumulated purchased tickets
-    const storedPurchases = sessionStorage.getItem("tickora-all-purchases");
+    const storedPurchases = localStorage.getItem("tickora-all-purchases");
     if (storedPurchases) {
       return JSON.parse(storedPurchases);
     }
@@ -59,7 +59,7 @@ function Ticket() {
 
     try {
       // Get current purchases
-      const storedPurchases = sessionStorage.getItem("tickora-all-purchases");
+      const storedPurchases = localStorage.getItem("tickora-all-purchases");
       const purchases = storedPurchases ? JSON.parse(storedPurchases) : [];
 
       // Filter out the cancelled ticket
@@ -67,8 +67,8 @@ function Ticket() {
         (t) => t.id !== ticketToCancel.id,
       );
 
-      // Update sessionStorage
-      sessionStorage.setItem(
+      // Update localStorage
+      localStorage.setItem(
         "tickora-all-purchases",
         JSON.stringify(updatedPurchases),
       );

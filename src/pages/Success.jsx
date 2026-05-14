@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 function getStoredPurchase() {
   try {
-    const storedPurchase = sessionStorage.getItem("tickora-last-purchase");
+    const storedPurchase = localStorage.getItem("tickora-last-purchase");
     if (storedPurchase) {
       return JSON.parse(storedPurchase);
     }

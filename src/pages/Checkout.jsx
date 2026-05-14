@@ -72,7 +72,7 @@ function Checkout() {
     // Accumulate purchased tickets instead of replacing
     let allPurchasedTickets = [];
     try {
-      const storedPurchase = sessionStorage.getItem("tickora-all-purchases");
+      const storedPurchase = localStorage.getItem("tickora-all-purchases");
       if (storedPurchase) {
         allPurchasedTickets = JSON.parse(storedPurchase);
       }
@@ -80,13 +80,13 @@ function Checkout() {
       // Ignore parsing errors
     }
     allPurchasedTickets = [...allPurchasedTickets, ...purchasedTickets];
-    sessionStorage.setItem(
+    localStorage.setItem(
       "tickora-all-purchases",
       JSON.stringify(allPurchasedTickets)
     );
 
     // Also store the last purchase data for backward compatibility
-    sessionStorage.setItem(
+    localStorage.setItem(
       "tickora-last-purchase",
       JSON.stringify(purchaseData)
     );
