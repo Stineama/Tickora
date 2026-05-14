@@ -88,12 +88,18 @@ function Success() {
               ))}
             </div>
 
-            <div className="mt-14 text-center">
+            <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                to="/"
+                to="/ticket"
                 className="inline-flex rounded-2xl bg-linear-to-r from-purple-500 to-pink-500 px-8 py-4 font-semibold transition hover:scale-105"
               >
-                Done
+                View Tickets
+              </Link>
+              <Link
+                to="/events"
+                className="inline-flex rounded-2xl border border-white/20 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10 hover:scale-105"
+              >
+                Browse More Events
               </Link>
             </div>
           </>

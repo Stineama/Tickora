@@ -69,10 +69,28 @@ function Checkout() {
       tickets: purchasedTickets,
     };
 
+    // Accumulate purchased tickets instead of replacing
+    let allPurchasedTickets = [];
+    try {
+      const storedPurchase = sessionStorage.getItem("tickora-all-purchases");
+      if (storedPurchase) {
+        allPurchasedTickets = JSON.parse(storedPurchase);
+      }
+    } catch (e) {
+      // Ignore parsing errors
+    }
+    allPurchasedTickets = [...allPurchasedTickets, ...purchasedTickets];
+    sessionStorage.setItem(
+      "tickora-all-purchases",
+      JSON.stringify(allPurchasedTickets)
+    );
+
+    // Also store the last purchase data for backward compatibility
     sessionStorage.setItem(
       "tickora-last-purchase",
       JSON.stringify(purchaseData)
     );
+
     clearCart();
     navigate("/success", { state: purchaseData });
   };

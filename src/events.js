@@ -253,7 +253,7 @@ const events = [
     location: "Lagos, Nigeria",
     date: "December 5, 2026",
     image:
-      "https://images.unsplash.com/photo-1771402900134-d55059668f04?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFmcmljYW4lMjBtYXJhdGhvbiUyMHJhY2V8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1771402900134-d55059668f04?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFmcmljYW4lMjBtYXJhdGhvbiUyMHJhY2V8ZW58MHx8MHx8fDA%3Dauto=format&fit=crop&w=900&q=80",
     description:
       "Meet runners, shop fitness brands, and collect race kits before marathon weekend.",
     regularPrice: 3000,
@@ -266,7 +266,7 @@ const events = [
     location: "Ikoyi, Lagos",
     date: "December 18, 2026",
     image:
-      "https://images.unsplash.com/photo-1731476027156-bc1f19652412?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWZyaWNhbiUyMGRpbm5lciUyMGV2ZW50fGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1731476027156-bc1f19652412?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWZyaWNhbiUyMGRpbm5lciUyMGV2ZW50fGVufDB8fDB8fHwwauto=format&fit=crop&w=900&q=80",
     description:
       "An elegant fundraising evening with dinner, awards, music, and community impact stories.",
     regularPrice: 12000,
