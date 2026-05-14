@@ -100,36 +100,44 @@ function Footer() {
             </div>
           </div>
 
-          <div>
-            <h2 className="font-bold">Explore</h2>
-            <div className="mt-5 flex flex-col gap-3 text-sm text-white/60">
-              <NavLink to="/" className="transition hover:text-pink-300">
-                Home
-              </NavLink>
-              <NavLink to="/events" className="transition hover:text-pink-300">
-                Events
-              </NavLink>
-              <NavLink to="/ticket" className="transition hover:text-pink-300">
-                Ticket
-              </NavLink>
+          <div className="grid grid-cols-2">
+            <div>
+              <h2 className="font-bold">Explore</h2>
+              <div className="mt-5 flex flex-col gap-3 text-sm text-white/60">
+                <NavLink to="/" className="transition hover:text-pink-300">
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/events"
+                  className="transition hover:text-pink-300"
+                >
+                  Events
+                </NavLink>
+                <NavLink
+                  to="/ticket"
+                  className="transition hover:text-pink-300"
+                >
+                  Ticket
+                </NavLink>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <h2 className="font-bold">Support</h2>
-            <div className="mt-5 flex flex-col gap-3 text-sm text-white/60">
-              <a href="#" className="transition hover:text-pink-300">
-                Help Center
-              </a>
-              <a href="#" className="transition hover:text-pink-300">
-                Refund Policy
-              </a>
-              <a href="#" className="transition hover:text-pink-300">
-                Sell Tickets
-              </a>
-              <a href="#" className="transition hover:text-pink-300">
-                Contact Us
-              </a>
+            <div>
+              <h2 className="font-bold">Support</h2>
+              <div className="mt-5 flex flex-col gap-3 text-sm text-white/60">
+                <a href="#" className="transition hover:text-pink-300">
+                  Help Center
+                </a>
+                <a href="#" className="transition hover:text-pink-300">
+                  Refund Policy
+                </a>
+                <a href="#" className="transition hover:text-pink-300">
+                  Sell Tickets
+                </a>
+                <a href="#" className="transition hover:text-pink-300">
+                  Contact Us
+                </a>
+              </div>
             </div>
           </div>
 

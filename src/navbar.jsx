@@ -66,7 +66,7 @@ function Navbar() {
                             </span>
                         </Link>
 
-                        <Link to="/ticket" className="bg-linear-to-r from-purple-500 to-pink-500 px-5 py-2 rounded-xl text-white font-semibold
+                        <Link to="/events" className="bg-linear-to-r from-purple-500 to-pink-500 px-5 py-2 rounded-xl text-white font-semibold
                         hover:scale-105 transition duration-300 shadow-lg shadow-purple-500/20">
                             Get Tickets
                         </Link>
@@ -108,15 +108,9 @@ function Navbar() {
                             </NavLink>
                         </li>
 
-                        <li>
-                            <NavLink to="/about" onClick={() => setMenuOpen(false)} className={mobileNavLinkClass}>
-                                About
-                            </NavLink>
-                        </li>
-
-                    <Link to="/ticket" onClick={() => setMenuOpen(false)} className="bg-linear-to-r from-purple-500 to-pink-500 py-3 rounded-xl text-center text-white font-semibold">
+                    <NavLink to="/events" onClick={() => setMenuOpen(false)} className="bg-linear-to-r from-purple-500 to-pink-500 py-3 rounded-xl text-center text-white font-semibold">
                             Get Tickets
-                    </Link>
+                    </NavLink>
                     </ul>
                 </div>
             )}
